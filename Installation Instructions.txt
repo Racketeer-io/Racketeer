@@ -1,0 +1,97 @@
+================================================================================
+  RACKETEER v0.3.2 — INSTALLATION GUIDE
+================================================================================
+
+No Docker required. No internet connection required.
+Node.js is bundled inside the installer and installed automatically.
+
+--------------------------------------------------------------------------------
+STEP 1 — Run the Installer
+--------------------------------------------------------------------------------
+
+  1. Right-click  Racketeer-Setup-0.3.2.exe  and select "Run as administrator"
+  2. Follow the on-screen wizard:
+       - License Key page : paste your key, or leave blank to start on the Free Plan
+       - Network Port page : choose the port Racketeer will listen on (default 3000)
+       - Install Location  : accept the default or choose a custom folder
+  3. Click "Install" — Node.js will be installed silently if not already present,
+     then Racketeer will be extracted and started as a Windows service.
+  4. When the wizard finishes, click "Open Racketeer in browser"
+     — or open your browser and go to:  http://localhost:[your chosen port]
+
+The Racketeer service starts automatically with Windows. No further setup needed.
+
+--------------------------------------------------------------------------------
+FIRST LOGIN
+--------------------------------------------------------------------------------
+
+  Default admin credentials:
+    Username : admin
+    PIN      : 0000
+
+  Change the admin PIN after your first login:
+    Login page -> Admin Panel -> Users -> Edit
+
+--------------------------------------------------------------------------------
+LICENSE
+--------------------------------------------------------------------------------
+
+  FREE PLAN (no key required)
+    Users : 3
+    Sites : 5
+    Racks : 10
+
+  If you have a purchased license key, you can enter it:
+    - During installation on the License Key page, OR
+    - After installation via Admin Panel -> License -> Enter License Key
+
+  To purchase or upgrade: https://racketeer.io/#pricing
+
+--------------------------------------------------------------------------------
+CHANGING THE PORT AFTER INSTALLATION
+--------------------------------------------------------------------------------
+
+  If you need to change the port Racketeer listens on:
+
+  1. Open File Explorer and go to:  C:\Program Files\Racketeer\
+  2. Right-click  reconfigure.ps1  and select "Run with PowerShell"
+  3. Follow the prompts — the service will restart automatically on the new port
+
+--------------------------------------------------------------------------------
+MANAGING THE SERVICE
+--------------------------------------------------------------------------------
+
+  Racketeer runs as a Windows service called "Racketeer Rack Management".
+  You can manage it from Services (services.msc) or via command line:
+
+    Start   :  sc start Racketeer
+    Stop    :  sc stop Racketeer
+    Restart :  sc stop Racketeer && sc start Racketeer
+
+  Logs are written to:  C:\Program Files\Racketeer\RacketeerService.out.log
+
+--------------------------------------------------------------------------------
+DATA LOCATION & BACKUP
+--------------------------------------------------------------------------------
+
+  All rack data is stored in:  C:\Program Files\Racketeer\data\db.json
+
+  To back up:   copy db.json to a safe location
+  To restore:   stop the service, replace db.json, then restart the service
+
+--------------------------------------------------------------------------------
+UNINSTALLING
+--------------------------------------------------------------------------------
+
+  Go to:  Settings -> Apps -> Installed apps -> Racketeer -> Uninstall
+
+  You will be asked whether to keep or delete your rack data.
+
+--------------------------------------------------------------------------------
+SUPPORT
+--------------------------------------------------------------------------------
+
+  Documentation : https://racketeer.io/docs.html
+  Email         : hello@racketeer.io
+
+================================================================================
