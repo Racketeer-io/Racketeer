@@ -48,9 +48,10 @@ No credit card. No trial timer. Just download and go.
 
 ### Windows Installer
 
-Download the latest `.exe` from the [Releases page](https://github.com/racketeer-app/racketeer/releases/latest).
+Download the latest `.exe` from the [Releases page]([https://github.com/racketeer-app/racketeer/releases/latest](https://github.com/Racketeer-io/Racketeer/releases/tag/latest)).
 
 Run the installer — Racketeer starts on `http://localhost:3000` automatically.
+(Port can be adjusted within the installer)
 
 ### Docker
 
