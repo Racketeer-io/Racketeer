@@ -112,13 +112,13 @@ Racketeer is commercial software. The Free Plan is permanently free — no expir
 
 - **Docs:** [racketeer.io/docs](https://racketeer.io/docs.html)
 - **Email:** hello@racketeer.io
-- **Issues:** [github.com/racketeer-app/racketeer/issues](https://github.com/racketeer-app/racketeer/issues)
+- **Issues:** [https://github.com/Racketeer-io/Racketeer/issues](/issues)
 
 ---
 
 ## Changelog
 
-Full history on the [Releases page](https://github.com/racketeer-app/racketeer/releases).
+Full history on the [Releases page](https://github.com/Racketeer-io/Racketeer/releases/tag/latest).
 
 **v0.3.2** — Free Plan (3 users, 5 sites, 10 racks, no license key required)  
 **v0.3.1** — Maintenance log, subnet/VLAN documentation, improved PDF export  
