@@ -1,29 +1,33 @@
 # Racketeer
 
-**Self-hosted rack documentation for AV and IT integrators.**
+**Visual rack documentation for AV and IT integrators.**
 
-Racketeer is a self-hosted rack management tool that runs as a background service on your local network. Document racks, map every port and cable, track cameras and PAVA systems, manage assets, and generate professional PDF reports — with zero cloud dependency and no data ever leaving your network.
-
-[![Latest Release](https://img.shields.io/github/v/release/Racketeer-io/Racketeer?label=latest&color=4ade80)](https://github.com/Racketeer-io/Racketeer/releases/latest)
-[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey)](#installation)
+[![Latest Release](https://img.shields.io/github/v/release/racketeer-app/racketeer?label=latest&color=4ade80)](https://github.com/racketeer-app/racketeer/releases/latest)
 [![License](https://img.shields.io/badge/license-Commercial-blue)](https://racketeer.io/terms)
+[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Docker-lightgrey)](#download)
+
+---
+
+Racketeer is a self-hosted rack documentation tool that lets you build accurate, visual rack diagrams — fast. No Visio. No spreadsheets. No chasing colleagues for a diagram that's already out of date.
+
+![Racketeer Screenshot](https://racketeer.io/screenshot.png)
 
 ---
 
 ## Features
 
-- **Visual rack builder** — drag-and-drop device placement with front and back views, 1U–42U, half and quarter-width slots
-- **Port & cable mapping** — document every connection, colour-coded by cable type, with status tracking
-- **Camera & CCTV documentation** — full NVR camera records including IP, MAC, VLAN, channel, patch location, and cable ID
-- **PAVA system documentation** — horn speakers, bi-directional units, fist mics, and yellow phones with full field capture
-- **IP conflict detection** — real-time duplicate IP alerts across all devices, cameras, and PAVA units
-- **Asset licence tracking** — software, hardware, and subscription licences per site with expiry alerts on the dashboard
-- **Audit log** — every change recorded with user, timestamp, and detail — filterable and PDF exportable
-- **Custom devices & templates** — build your own device types and save rack layouts for reuse across sites
-- **Drive bay documentation** — slot-by-slot drive records for NVRs and servers, with built-in RAID calculator
-- **Multi-site management** — organise multiple locations under one installation with instant site switching
-- **PDF & CSV exports** — professional branded reports for client handover, as-built records, and compliance
-- **Built-in tools** — CCTV storage calculator, RAID calculator, battery capacity calculator
+- **Drag-and-drop rack builder** — position devices exactly where they sit in the rack
+- **50+ device types** — servers, switches, patch panels, PDUs, UPS, AV equipment, cameras, and more
+- **Multi-site management** — organise racks across unlimited sites and locations
+- **PDF export** — generate client-ready rack diagrams in one click
+- **Port mapping** — document every RJ45, fibre, HDMI, and USB connection
+- **Audit log** — see who changed what and when
+- **Asset licensing** — track software and hardware licence expiry dates
+- **Custom devices** — add any device type not in the built-in library
+- **Rack templates** — save and reuse common rack configurations
+- **Multi-user** — invite your team with admin or viewer roles
+- **Maintenance log** — record planned and completed maintenance per device
+- **Offline-first** — runs entirely on your network, no cloud dependency
 
 ---
 
@@ -40,112 +44,85 @@ No credit card. No trial timer. Just download and go.
 
 ---
 
-## Installation
+## Download
 
-### Windows
+### Windows Installer
 
-1. Download `Racketeer-Setup-0.3.2.exe` from the [latest release](https://github.com/Racketeer-io/Racketeer/releases/tag/latest)
-2. Right-click → **Run as administrator**
-3. Follow the wizard — choose your port (default 3000), optionally enter a licence key
-4. Open your browser to `http://localhost:[your chosen port]`
+Download the latest `.exe` from the [Releases page](https://github.com/racketeer-app/racketeer/releases/latest).
 
-No Docker required. Node.js is bundled. Starts automatically at boot as a Windows service.
+Run the installer — Racketeer starts on `http://localhost:3000` automatically.
 
-To change the port after installation: open `C:\Program Files\Racketeer\`, right-click `reconfigure.ps1` → Run with PowerShell.
-
-### Linux
-
-1. Download `Racketeer-0.3.2-linux.zip` from the [latest release](https://github.com/Racketeer-io/Racketeer/releases/tag/latest)
-2. Extract and run the installer:
+### Docker
 
 ```bash
-unzip Racketeer-0.3.2-linux.zip -d racketeer-install
-cd racketeer-install
-chmod +x install.sh
-sudo ./install.sh
+docker load -i racketeer-0.3.2-docker.tar.gz
+docker run -d \
+  -p 3000:3000 \
+  -v racketeer-data:/app/data \
+  --name racketeer \
+  --restart unless-stopped \
+  racketeer:latest
 ```
 
-Node.js 22 is installed automatically on Ubuntu/Debian and RHEL/Fedora.
-Open `http://localhost:3000` — or `http://[server-ip]:3000` from another machine.
+Or with Docker Compose:
 
-Runs as a systemd service, starts automatically on boot.
+```yaml
+services:
+  racketeer:
+    image: racketeer:latest
+    ports:
+      - "3000:3000"
+    volumes:
+      - racketeer-data:/app/data
+    restart: unless-stopped
 
-### macOS
-
-1. Download `Racketeer-0.3.2-macos.zip` from the [latest release](https://github.com/Racketeer-io/Racketeer/releases/tag/latest)
-2. Extract and run the installer:
-
-```bash
-unzip Racketeer-0.3.2-macos.zip -d racketeer-install
-cd racketeer-install
-chmod +x install.sh
-sudo ./install.sh
+volumes:
+  racketeer-data:
 ```
-
-Node.js 22 is installed automatically if Homebrew is present.
-Open `http://localhost:3000`.
-
-Runs as a LaunchDaemon, starts automatically at login.
 
 ---
 
-## Default Login
+## Getting Started
 
-| Field | Value |
-|-------|-------|
-| Username | `admin` |
-| PIN | `1234` |
+1. Download and install (Windows or Docker)
+2. Open `http://localhost:3000`
+3. Create your first site and add a rack
+4. Start adding devices
 
-**Change the PIN immediately** after first login — Login → Admin Panel → Users → Edit.
-
----
-
-## Licence Activation
-
-The Free Plan is active by default — no key required.
-
-To activate a purchased licence: **Admin Panel → License → Enter License Key**. Fully offline — no internet connection needed.
-
-Purchase or upgrade at [racketeer.io](https://racketeer.io/#pricing) or email **hello@racketeer.io**.
+No account registration. Your data stays on your machine.
 
 ---
 
 ## Data & Backup
 
-| Platform | Data location |
-|----------|--------------|
-| Windows | `C:\Program Files\Racketeer\data\db.json` |
-| Linux / macOS | `/opt/racketeer/data/db.json` |
-
-Back up `db.json` regularly — it contains your entire database.
-Restore by stopping the service, replacing the file, and restarting.
+All data lives in `data/db.json` in the install directory. Back it up by copying that file. Restore by dropping it back in place.
 
 ---
 
-## What's New in v0.3.2
+## Licensing
 
-- **Free Plan** — 3 users, 5 sites, 10 racks, no licence key required, no expiry
-- **Port selection during install** — choose the port Racketeer listens on (default 3000)
-- **Post-install port change** — `reconfigure.ps1` lets you change the port at any time without reinstalling
+Racketeer is commercial software. The Free Plan is permanently free — no expiry, no card required. Paid plans are licensed annually.
 
-See [CHANGELOG.md](CHANGELOG.md) for the full version history.
+[View pricing →](https://racketeer.io/#pricing)
 
 ---
 
-## Documentation
+## Support
 
-Full user guide: **[racketeer.io/docs](https://racketeer.io/docs.html)**
-
----
-
-## Bugs & Feature Requests
-
-Open an issue on [GitHub Issues](https://github.com/Racketeer-io/Racketeer/issues).
-Include what you were doing, what you expected, and what happened. Screenshots always welcome.
+- **Docs:** [racketeer.io/docs](https://racketeer.io/docs.html)
+- **Email:** hello@racketeer.io
+- **Issues:** [github.com/racketeer-app/racketeer/issues](https://github.com/racketeer-app/racketeer/issues)
 
 ---
 
-## Licence
+## Changelog
 
-Commercial software. Free Plan available permanently at no cost.
-See [racketeer.io](https://racketeer.io) for full pricing and licence terms.
+Full history on the [Releases page](https://github.com/racketeer-app/racketeer/releases).
+
+**v0.3.2** — Free Plan (3 users, 5 sites, 10 racks, no license key required)  
+**v0.3.1** — Maintenance log, subnet/VLAN documentation, improved PDF export  
+**v0.3.0** — Multi-user accounts, audit log, asset licensing
+
+---
+
+*Built for the integrators who build the infrastructure everyone else relies on.*
