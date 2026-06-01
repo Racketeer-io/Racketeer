@@ -1,7 +1,6 @@
 **Visual rack documentation for AV and IT integrators.**
 
-  [![Latest Release](https://img.shields.io/github/v/release/Racketeer-io/Racketeer?label=latest&color=4ade80)](https://gith
-  ub.com/Racketeer-io/Racketeer/releases/tag/latest)
+  [![Latest Release](https://img.shields.io/github/v/release/Racketeer-io/Racketeer?label=latest&color=4ade80)](https://github.com/Racketeer-io/Racketeer/releases/tag/latest)
   [![License](https://img.shields.io/badge/license-Commercial-blue)](https://racketeer.io/terms)
   [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Docker-lightgrey)](#download)
 
