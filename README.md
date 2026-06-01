@@ -1,128 +1,128 @@
-# Racketeer
-
 **Visual rack documentation for AV and IT integrators.**
 
-[![Latest Release](https://img.shields.io/github/v/release/racketeer-app/racketeer?label=latest&color=4ade80)](https://github.com/racketeer-app/racketeer/releases/latest)
-[![License](https://img.shields.io/badge/license-Commercial-blue)](https://racketeer.io/terms)
-[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Docker-lightgrey)](#download)
+  [![Latest Release](https://img.shields.io/github/v/release/Racketeer-io/Racketeer?label=latest&color=4ade80)](https://gith
+  ub.com/Racketeer-io/Racketeer/releases/tag/latest)
+  [![License](https://img.shields.io/badge/license-Commercial-blue)](https://racketeer.io/terms)
+  [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Docker-lightgrey)](#download)
 
----
+  ---
 
-Racketeer is a self-hosted rack documentation tool that lets you build accurate, visual rack diagrams — fast. No Visio. No spreadsheets. No chasing colleagues for a diagram that's already out of date.
+  Racketeer is a self-hosted rack documentation tool that lets you build accurate, visual rack diagrams — fast. No Visio. No
+  spreadsheets. No chasing colleagues for a diagram that's already out of date.
 
-![Racketeer Screenshot](https://racketeer.io/screenshot.png)
+  ![Racketeer Screenshot](https://racketeer.io/screenshot.png)
 
----
+  ---
 
-## Features
+  ## Features
 
-- **Drag-and-drop rack builder** — position devices exactly where they sit in the rack
-- **50+ device types** — servers, switches, patch panels, PDUs, UPS, AV equipment, cameras, and more
-- **Multi-site management** — organise racks across unlimited sites and locations
-- **PDF export** — generate client-ready rack diagrams in one click
-- **Port mapping** — document every RJ45, fibre, HDMI, and USB connection
-- **Audit log** — see who changed what and when
-- **Asset licensing** — track software and hardware licence expiry dates
-- **Custom devices** — add any device type not in the built-in library
-- **Rack templates** — save and reuse common rack configurations
-- **Multi-user** — invite your team with admin or viewer roles
-- **Maintenance log** — record planned and completed maintenance per device
-- **Offline-first** — runs entirely on your network, no cloud dependency
+  - **Drag-and-drop rack builder** — position devices exactly where they sit in the rack
+  - **50+ device types** — servers, switches, patch panels, PDUs, UPS, AV equipment, cameras, and more
+  - **Multi-site management** — organise racks across unlimited sites and locations
+  - **PDF export** — generate client-ready rack diagrams in one click
+  - **Port mapping** — document every RJ45, fibre, HDMI, and USB connection
+  - **Audit log** — see who changed what and when
+  - **Asset licensing** — track software and hardware licence expiry dates
+  - **Custom devices** — add any device type not in the built-in library
+  - **Rack templates** — save and reuse common rack configurations
+  - **Multi-user** — invite your team with admin or viewer roles
+  - **Maintenance log** — record planned and completed maintenance per device
+  - **Offline-first** — runs entirely on your network, no cloud dependency
 
----
+  ---
 
-## Free Plan
+  ## Free Plan
 
-No credit card. No trial timer. Just download and go.
+  No credit card. No trial timer. Just download and go.
 
-| Plan | Users | Sites | Racks | Price |
-|------|-------|-------|-------|-------|
-| **Free** | 3 | 5 | 10 | £0 forever |
-| Starter | 5 | Unlimited | Unlimited | £149/yr |
-| Pro | 15 | Unlimited | Unlimited | £349/yr |
-| Team | 30 | Unlimited | Unlimited | £599/yr |
+  | Plan | Users | Sites | Racks | Price |
+  |------|-------|-------|-------|-------|
+  | **Free** | 3 | 5 | 10 | £0 forever |
+  | Starter | 5 | Unlimited | Unlimited | £149/yr |
+  | Pro | 15 | Unlimited | Unlimited | £349/yr |
+  | Team | 30 | Unlimited | Unlimited | £599/yr |
 
----
+  ---
 
-## Download
+  ## Download
 
-### Windows Installer
+  ### Windows Installer
 
-Download the latest `.exe` from the [Releases page](https://github.com/racketeer-app/racketeer/releases/latest).
+  Download the latest `.exe` from the [Releases page](https://github.com/Racketeer-io/Racketeer/releases/tag/latest).
 
-Run the installer — Racketeer starts on `http://localhost:3000` automatically.
+  Run the installer — Racketeer starts on `http://localhost:3000` automatically.
 
-### Docker
+  ### Docker
 
-```bash
-docker load -i racketeer-0.3.2-docker.tar.gz
-docker run -d \
-  -p 3000:3000 \
-  -v racketeer-data:/app/data \
-  --name racketeer \
-  --restart unless-stopped \
-  racketeer:latest
-```
+  ```bash
+  docker load -i racketeer-0.3.2-docker.tar.gz
+  docker run -d \
+    -p 3000:3000 \
+    -v racketeer-data:/app/data \
+    --name racketeer \
+    --restart unless-stopped \
+    racketeer:latest
 
-Or with Docker Compose:
+  Or with Docker Compose:
 
-```yaml
-services:
-  racketeer:
-    image: racketeer:latest
-    ports:
-      - "3000:3000"
-    volumes:
-      - racketeer-data:/app/data
-    restart: unless-stopped
+  services:
+    racketeer:
+      image: racketeer:latest
+      ports:
+        - "3000:3000"
+      volumes:
+        - racketeer-data:/app/data
+      restart: unless-stopped
 
-volumes:
-  racketeer-data:
-```
+  volumes:
+    racketeer-data:
 
----
+  ---
+  Getting Started
 
-## Getting Started
+  1. Download and install (Windows or Docker)
+  2. Open http://localhost:3000
+  3. Create your first site and add a rack
+  4. Start adding devices
 
-1. Download and install (Windows or Docker)
-2. Open `http://localhost:3000`
-3. Create your first site and add a rack
-4. Start adding devices
+  No account registration. Your data stays on your machine.
 
-No account registration. Your data stays on your machine.
+  ---
+  Data & Backup
 
----
+  All data lives in data/db.json in the install directory. Back it up by copying that file. Restore by dropping it back in
+  place.
 
-## Data & Backup
+  ---
+  Licensing
 
-All data lives in `data/db.json` in the install directory. Back it up by copying that file. Restore by dropping it back in place.
+  Racketeer is commercial software. The Free Plan is permanently free — no expiry, no card required. Paid plans are licensed
+  annually.
 
----
+  View pricing → (https://racketeer.io/#pricing)
 
-## Licensing
+  ---
+  Support
 
-Racketeer is commercial software. The Free Plan is permanently free — no expiry, no card required. Paid plans are licensed annually.
+  - Docs: racketeer.io/docs (https://racketeer.io/docs.html)
+  - Email: hello@racketeer.io
+  - Issues: https://github.com/Racketeer-io/Racketeer/issues
 
-[View pricing →](https://racketeer.io/#pricing)
+  ---
+  Changelog
 
----
+  Full history on the Releases page (https://github.com/Racketeer-io/Racketeer/releases).
 
-## Support
+  v0.3.2 — Free Plan (3 users, 5 sites, 10 racks, no license key required)
+  v0.3.1 — Maintenance log, subnet/VLAN documentation, improved PDF export
+  v0.3.0 — Multi-user accounts, audit log, asset licensing
 
-- **Docs:** [racketeer.io/docs](https://racketeer.io/docs.html)
-- **Email:** hello@racketeer.io
-- **Issues:** [github.com/racketeer-app/racketeer/issues](https://github.com/racketeer-app/racketeer/issues)
+  ---
+  Built for the integrators who build the infrastructure everyone else relies on.
 
----
-
-## Changelog
-
-Full history on the [Releases page](https://github.com/racketeer-app/racketeer/releases).
-
-**v0.3.2** — Free Plan (3 users, 5 sites, 10 racks, no license key required)  
-**v0.3.1** — Maintenance log, subnet/VLAN documentation, improved PDF export  
-**v0.3.0** — Multi-user accounts, audit log, asset licensing
-
----
-
-*Built for the integrators who build the infrastructure everyone else relies on.*
+  Four things changed:
+  1. **Badge image URL** — `racketeer-app/racketeer` → `Racketeer-io/Racketeer` (so the version number pulls from the right
+  repo)
+  2. **Badge link** — already pointed to the correct URL, kept as-is
+  3. **Download section** release link — corrected
+  4. **Issues link** and **Releases link** in Support/Changelog — corrected
