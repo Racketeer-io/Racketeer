@@ -23,6 +23,8 @@ Racketeer is a self-hosted rack documentation tool that lets you build accurate,
 ## Contents
 
 - [Features](#features)
+- [See it in action](#see-it-in-action)
+- [Screenshots](#screenshots)
 - [Free Plan](#free-plan)
 - [Download](#download)
 - [Getting Started](#getting-started)
@@ -40,6 +42,8 @@ Racketeer is a self-hosted rack documentation tool that lets you build accurate,
 - **Multi-site management** — organise racks across unlimited sites and locations
 - **PDF export** — generate client-ready rack diagrams in one click
 - **Port mapping** — document every RJ45, fibre, HDMI, and USB connection
+- **IP address management** — subnets, an IP registry, duplicate-address flagging, and colour-coded VLANs
+- **Engineer tools** — built-in subnet, CCTV storage, RAID capacity, and UPS runtime calculators
 - **Audit log** — see who changed what and when
 - **Asset licensing** — track software and hardware licence expiry dates
 - **Custom devices** — add any device type not in the built-in library
@@ -47,6 +51,79 @@ Racketeer is a self-hosted rack documentation tool that lets you build accurate,
 - **Multi-user** — invite your team with admin or viewer roles
 - **Maintenance log** — record planned and completed maintenance per device
 - **Offline-first** — runs entirely on your network, no cloud dependency
+
+---
+
+## See it in action
+
+### Build a rack from scratch
+
+Add a site, add a rack, drop devices in from the palette, fill in the details, and watch the power and heat totals add up.
+
+![Creating a site and a rack, dropping devices into a 42U elevation from the palette, and editing a device's details while the rack's power and heat totals update](assets/gifs/rack-builder.gif)
+
+### Ports, patching and VLANs
+
+Open any device to see its ports, pick where each cable goes, and tag the VLAN, cable type, cable ID and length. The link shows on both ends.
+
+![Opening a switch's ports, connecting a port to a port on another device, tagging it with a VLAN, cable type, ID and length, and seeing the link on both devices](assets/gifs/ports-and-vlans.gif)
+
+### IP address management
+
+Subnets with live utilisation, a searchable registry of every IP, duplicate addresses flagged, and colour-coded VLANs.
+
+![Browsing subnets and their usage, the IP registry with its filters, and the colour-coded VLAN list](assets/gifs/ip-management.gif)
+
+### Maintenance logs
+
+See the next service date on every site, then log a visit straight from the rack: who did it, what was done, when it's due next, and a built-in inspection checklist where failures get a note.
+
+![Viewing next service dates on the dashboard, adding a maintenance entry, working through the inspection checklist, and seeing the entry in the maintenance history](assets/gifs/maintenance-log.gif)
+
+### Engineer tools
+
+Subnet, CCTV storage and bandwidth, RAID capacity, and UPS runtime calculators, built in. No spreadsheets.
+
+![Using the IPv4 subnet, CCTV storage, RAID capacity and battery runtime calculators](assets/gifs/engineer-calculators.gif)
+
+---
+
+## Screenshots
+
+### Dashboard
+
+Every site, rack and device at a glance, with next service dates and IP conflict counts.
+
+![The dashboard showing totals for sites, racks, devices, expiring licences and IP conflicts, with a card for each site and its racks](assets/screenshots/dashboard.png)
+
+### Rack elevation
+
+A 42U elevation with live power and heat totals for the rack.
+
+![A rack elevation showing a firewall, core switch, two servers, a NAS and a UPS, with the rack's power draw and heat output above it](assets/screenshots/rack-elevation.png)
+
+### IP registry
+
+Every address with its gateway, VLAN, device, rack and site.
+
+![The IP registry table listing each address with its gateway, MAC, VLAN, type, device, rack and site](assets/screenshots/ip-registry.png)
+
+<table>
+<tr>
+<td width="50%" valign="top">
+<img src="assets/screenshots/port-details.png" alt="The port details dialog with VLAN, cable type, cable ID, length and status fields"><br>
+<sub><b>Port details</b> — connect a port and tag the VLAN, cable type, ID and length.</sub>
+</td>
+<td width="50%" valign="top">
+<img src="assets/screenshots/maintenance-checklist.png" alt="The maintenance entry inspection checklist with ticked items and a failure note"><br>
+<sub><b>Maintenance checklist</b> — tick items off, and add a note to anything that fails.</sub>
+</td>
+</tr>
+</table>
+
+### Engineer tools
+
+![The battery calculator showing estimated UPS runtime and usable energy for a given load](assets/screenshots/engineer-calculators.png)
 
 ---
 
