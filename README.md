@@ -16,7 +16,7 @@ Racketeer is a self-hosted rack documentation tool that lets you build accurate,
 
 <div align="center">
 
-![Racketeer Screenshot](https://racketeer.io/screenshot.png)
+![A Racketeer rack elevation showing a firewall, core switch, two servers, a NAS and a UPS, with the rack's power draw and heat output above it](assets/screenshots/rack-elevation.png)
 
 </div>
 
@@ -95,12 +95,6 @@ Subnet, CCTV storage and bandwidth, RAID capacity, and UPS runtime calculators, 
 Every site, rack and device at a glance, with next service dates and IP conflict counts.
 
 ![The dashboard showing totals for sites, racks, devices, expiring licences and IP conflicts, with a card for each site and its racks](assets/screenshots/dashboard.png)
-
-### Rack elevation
-
-A 42U elevation with live power and heat totals for the rack.
-
-![A rack elevation showing a firewall, core switch, two servers, a NAS and a UPS, with the rack's power draw and heat output above it](assets/screenshots/rack-elevation.png)
 
 ### IP registry
 
